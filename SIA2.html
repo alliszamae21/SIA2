@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8" />
+
+    <title>Form Validation </title>
+
+ 
+
+<style>
+
+body {
+
+  background-image: url('hotel.jpg');
+
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  background-size: cover;
+
+}
+
+ 
+
+.form-group{
+
+ 
+
+display: flex;
+
+ 
+
+flex-firection: column;
+
+ 
+
+margin-bottom: 10px;
+
+ 
+
+ 
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+label{
+
+ 
+
+font-weight: bold;
+
+ 
+
+}
+
+ 
+
+.error-message {
+
+ 
+
+color: red;
+
+ 
+
+font-size: 14px;
+
+ 
+
+margin-top: 5px;
+
+ 
+
+display: none;
+
+ 
+
+}
+
+ 
+
+.format-control {
+
+ 
+
+width: 50%;
+
+ 
+
+}
+
+ 
+
+</head>
+
+</style>
+
+    
+
+        <center><h1 style="color:blue">HOTEL RESERVATION</center></h1>
+
+        <form id="formfill">
+
+          <fieldset id="contactinfo">
+
+            <legend><span>Contact Information</span></legend>
+
+           <br><label> Name <input type="text" name="name" id="nameinput" placeholder="First name" />
+           <span id="nameinput" style="color:red">
+           <p>Please enter your first name in UPPERCASE</p>
+            </label>
+
+           <br> <label> Email<input type="email" name="email" id="emailinput" placeholder="address@example.com" />
+           <span id ="emailinput" style="color:red">
+           <p>Maximum 15 characters, at least 1 uppercase letter, 1 lowercase letter</p>
+            </label>
+
+           <br> <label> Phone<input type="text" name="phone" id="phoneinput" placeholder="555-123-4567" />
+            <span id ="phoneinput" style="color:red">
+            <p>Minimum 10 numbers</p>
+            </label>
+
+          </fieldset>
+
+          <fieldset id="reservationinfo">
+
+            <legend><span>Reservation Information</span></legend>
+
+            <fieldset id="partysize">
+
+              <legend>Party size</legend>
+
+             <br> <label>
+
+                Number in your party
+
+                <input type="number" name="partynumber" id="partynumber" min="1" max="50" />
+
+              </label>
+
+             <br> <label>
+
+                Number of rooms
+
+                <input type="number" name="roomsrequired" id="roomsrequired" min="1" max="38" />
+
+              </label>
+
+            </fieldset>
+
+            <fieldset id="bedpref">
+
+              <legend>Bed preference</legend>
+
+              <br><label for="kingqueen">
+
+                <input type="checkbox" id="kingqueen" value="King/Queen" name="bedpref" />
+
+                King/Queen
+
+              </label>
+
+              <br><label for="twin">
+
+                <input type="checkbox" id="twin" value="Twin" name="bedpref" />
+
+                Twin
+
+              </label>
+
+              <br><label>
+
+                <input type="checkbox" id="othermix" value="Other/Mix" name="bedpref" />
+
+                Other/Mix
+
+              </label>
+
+            </fieldset>
+
+            <fieldset id="checkin">
+
+              <br><legend>Check-in date</legend>
+
+               <br> <select id="inmonth" name="inmonth">
+
+                  <option value="01">January</option>
+
+                  <option value="02">February</option>
+
+                  <option value="03">March</option>
+
+                  <option value="04">April</option>
+
+                  <option value="05">May</option>
+
+                  <option value="06">June</option>
+
+                  <option value="07">July</option>
+
+                  <option value="08">August</option>
+
+                  <option value="09">September</option>
+
+                  <option value="10">October</option>
+
+                  <option value="11">November</option>
+
+                  <option value="12">December</option>
+
+                </select>
+
+                <br><select id="indate" name="indate">
+
+                  <option value="01">1</option>
+
+                  <option value="02">2</option>
+
+                  <option value="03">3</option>
+
+                  <option value="04">4</option>
+
+                  <option value="05">5</option>
+
+                  <option value="06">6</option>
+
+                  <option value="07">7</option>
+
+                  <option value="08">8</option>
+
+                  <option value="09">9</option>
+
+                  <option value="10">10</option>
+
+                  <option value="11">11</option>
+
+                  <option value="12">12</option>
+
+                  <option value="13">13</option>
+
+                  <option value="14">14</option>
+
+                  <option value="15">15</option>
+
+                  <option value="16">16</option>
+
+                  <option value="17">17</option>
+
+                  <option value="18">18</option>
+
+                  <option value="19">19</option>
+
+                  <option value="20">20</option>
+
+                  <option value="21">21</option>
+
+                  <option value="22">22</option>
+
+                  <option value="23">23</option>
+
+                  <option value="24">24</option>
+
+                  <option value="25">25</option>
+
+                  <option value="26">26</option>
+
+                  <option value="27">27</option>
+
+                  <option value="28">28</option>
+
+                  <option value="29">29</option>
+
+                  <option value="30">30</option>
+
+                  <option value="31">31</option>
+
+                </select> 
+
+                <br><select id="inyear" name="inyear">   
+
+                  <option value="2013">2013</option>
+
+                  <option value="2014">2014</option>
+
+                  <option value="2015">2015</option>
+
+                  <option value="2016">2016</option>
+
+                </select>
+
+            </fieldset>
+
+            <br><fieldset id="checkout">
+
+              <legend>Check-out date</legend>
+
+                <br><select id="outmonth" name="outmonth">
+
+                  <option value="01">January</option>
+
+                  <option value="02">February</option>
+
+                  <option value="03">March</option>
+
+                  <option value="04">April</option>
+
+                  <option value="05">May</option>
+
+                  <option value="06">June</option>
+
+                  <option value="07">July</option>
+
+                  <option value="08">August</option>
+
+                  <option value="09">September</option>
+
+                  <option value="10">October</option>
+
+                  <option value="11">November</option>
+
+                  <option value="12">December</option>
+
+                </select>
+
+                <br><select id="outdate" name="outdate">
+
+                  <option value="01">1</option>
+
+                  <option value="02">2</option>
+
+                  <option value="03">3</option>
+
+                  <option value="04">4</option>
+
+                  <option value="05">5</option>
+
+                  <option value="06">6</option>
+
+                  <option value="07">7</option>
+
+                  <option value="08">8</option>
+
+                  <option value="09">9</option>
+
+                  <option value="10">10</option>
+
+                  <option value="11">11</option>
+
+                  <option value="12">12</option>
+
+                  <option value="13">13</option>
+
+                  <option value="14">14</option>
+
+                  <option value="15">15</option>
+
+                  <option value="16">16</option>
+
+                  <option value="17">17</option>
+
+                  <option value="18">18</option>
+
+                  <option value="19">19</option>
+
+                  <option value="20">20</option>
+
+                  <option value="21">21</option>
+
+                  <option value="22">22</option>
+
+                  <option value="23">23</option>
+
+                  <option value="24">24</option>
+
+                  <option value="25">25</option>
+
+                  <option value="26">26</option>
+
+                  <option value="27">27</option>
+
+                  <option value="28">28</option>
+
+                  <option value="29">29</option>
+
+                  <option value="30">30</option>
+
+                  <option value="31">31</option>
+
+                </select> 
+
+                <br><select id="outyear" name="outyear">   
+
+                  <option value="2013">2013</option>
+
+                  <option value="2014">2014</option>
+
+                  <option value="2015">2015</option>
+
+                  <option value="2016">2016</option>
+
+                </select>
+
+            </fieldset>
+
+            <br><fieldset id="parking">
+
+              <legend>Parking</legend>
+
+             <br> <label>
+
+                I need parking for
+
+              <input type="number" name="parking" id="parkinginput" min="0" max="22" />
+
+                vehicles.
+
+              </label>
+
+            </fieldset>
+
+          </fieldset>
+
+          <fieldset id="additionalinfo">
+
+            <legend><span>Additional Information</span></legend>
+
+            <br><label>
+
+              Feedback or other information
+
+              <textarea id="feedback" name="feedback" rows="4" cols="55"></textarea>
+
+            </label>
+
+          </fieldset>
+
+          <fieldset id="submitbutton">
+
+            <input type="submit" id="submit" value="Submit" />
+
+      <script> 
+
+    const usernameInput = 
+
+document.getElementById("name");     const phoneInput = 
+
+document.getElementById("phone");     const emailError = 
+
+document.getElementById("email");     const nameError = 
+
+ 
+
+document.getElementById("nameerror"); 
+
+    const phoneError = 
+
+document.getElementById("phoneerror"); 
+
+ const emailError = 
+
+document.getElementById("emailerror"); 
+
+ 
+
+ 
+
+    nameInput.addEventListener("input", function() { 
+
+      if (usernameInput.value.format < 8) {         nameError.textContent = 
+
+"Required and must be in UPPER CASE"; 
+
+        nameError.style.display = "block"; 
+
+      } else { 
+
+        nameError.style.display = "none"; 
+
+      } 
+
+    }); 
+
+ 
+
+    phoneInput.addEventListener("input", function() { 
+
+      if (phoneInput.value.range > 10) {         phoneError.textContent = 
+
+"Enter a valid phone number"; 
+
+        phoneError.style.display = "block"; 
+
+      } else { 
+
+        phoneError.style.display = "none"; 
+
+      } 
+
+    }); 
+
+emailInput.addEventListener("input", function() { 
+
+      if (phoneInput.value.length < 8) {         emailError.textContent = 
+
+"Please provide a properly formatted email address"; 
+
+        emailError.style.display = "block"; 
+
+      } else { 
+
+        emailError.style.display = "none"; 
+
+      } 
+
+    }); 
+
+ 
+
+ 
+
+  </script> 
+
+ 
+
+        
+
+    </div>
+
+  </body>
+
+</html>
+
+ 
+
+        
+
+ 
